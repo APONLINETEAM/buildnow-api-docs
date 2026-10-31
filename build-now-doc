@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BuildNow API documentation for submitting building details.">
+<title>BuildNow API Documentation</title>
+<style>
+:root{--bg:#f7f8fc;--panel:#fff;--text:#182230;--muted:#667085;--line:#e4e7ec;--brand:#3157d5;--code:#101828;--soft:#eef2ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:28px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.topbar{background:#101828;color:#fff;padding:18px max(24px,calc((100% - 1180px)/2));display:flex;align-items:center;gap:12px}
+.logo{width:34px;height:34px;border-radius:9px;background:#4969e8;display:grid;place-items:center;font-weight:800}
+.topbar strong{font-size:16px}.topbar span{color:#cbd5e1;font-size:13px;margin-left:auto}
+.layout{max-width:1180px;margin:34px auto;padding:0 22px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:28px}
+nav{position:sticky;top:24px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+nav .navtitle{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:0 0 12px}
+nav a{display:block;text-decoration:none;color:#475467;padding:8px 10px;border-radius:7px;font-size:14px}
+nav a:hover{background:var(--soft);color:var(--brand)}
+main{min-width:0}
+.hero{padding:30px 32px;background:linear-gradient(120deg,#172554,#3157d5);color:#fff;border-radius:15px;margin-bottom:22px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#c7d2fe;font-weight:700}
+h1{font-size:32px;line-height:1.2;margin:8px 0 10px}
+.hero p{color:#e0e7ff;margin:0;max-width:680px}
+section,.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:18px;min-width:0}
+h2{font-size:20px;margin:0 0 16px;line-height:1.3}
+h3{font-size:15px;margin:22px 0 10px}
+p{margin:8px 0 14px}
+.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+td code,.inlinecode{background:#f2f4f7;padding:2px 5px;border-radius:5px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.method{display:inline-block;background:#e8f7ee;color:#067647;font-weight:800;font-size:12px;padding:4px 9px;border-radius:6px;margin-right:8px}
+.endpoint{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}
+.notice{border-left:4px solid #d97706;background:#fffaeb;padding:13px 15px;border-radius:7px;color:#7a2e0e;margin:14px 0}
+.codehead{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin:18px 0 7px}
+button{border:1px solid #d0d5dd;background:#fff;color:#344054;border-radius:7px;padding:6px 10px;cursor:pointer;font-size:12px}
+button:hover{background:#f2f4f7}
+pre{margin:0;background:var(--code);color:#e6edf3;border-radius:9px;padding:18px;overflow:auto;max-height:720px;font:12.5px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:18px}
+@media(max-width:800px){.layout{display:block;margin:18px auto}nav{position:static;margin-bottom:18px}.hero{padding:24px}h1{font-size:26px}.topbar span{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="logo">B</div><strong>BuildNow API</strong><span>Developer Documentation</span></header>
+<div class="layout">
+<nav aria-label="Documentation navigation">
+<p class="navtitle">On this page</p>
+<a href="#overview">Overview</a>
+<a href="#endpoint">API endpoint</a>
+<a href="#headers">Request headers</a>
+<a href="#request">Sample request</a>
+<a href="#response">Success response</a>
+<a href="#notes">Notes</a>
+</nav>
+<main>
+<div class="hero" id="overview">
+<div class="eyebrow">API Reference · Building Permissions</div>
+<h1>BuildNow API Documentation</h1>
+<p>Submit building permission and application details to the BuildNow system using the Submit Building Details endpoint.</p>
+</div>
+<section id="endpoint">
+<h2>API endpoint</h2>
+<p><span class="method">POST</span><span class="endpoint">https://uat-tgrerait.aptonline.in:7443/RERAAPI/api/Buildnow/submitbuildingdetails</span></p>
+<table><tbody><tr><th>Property</th><th>Value</th></tr><tr><td>Method</td><td><code>POST</code></td></tr><tr><td>Content-Type</td><td><code>application/json</code></td></tr><tr><td>Endpoint</td><td class="endpoint">https://uat-tgrerait.aptonline.in:7443/RERAAPI/api/Buildnow/submitbuildingdetails</td></tr></tbody></table>
+</section>
+<section id="headers">
+<h2>Request headers</h2>
+<table><tbody><tr><th>Header</th><th>Value</th></tr><tr><td><code>x-api-key</code></td><td><code>YOUR_BUILDNOW_API_KEY</code></td></tr><tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr></tbody></table>
+<div class="notice"><strong>Security:</strong> The original Word document contained an API key. It is intentionally not reproduced on this page. Supply the actual key through a secure secret/configuration mechanism, and rotate the exposed key before use. Never publish API credentials in a public repository or HTML page.</div>
+</section>
+<section id="request">
+<h2>Sample request JSON payload</h2>
+<p class="muted">The following example preserves the sample request structure supplied in the source document.</p>
+<div class="codehead"><span>application/json</span><button onclick="copyCode('request-json',this)">Copy JSON</button></div>
+<pre id="request-json">{
+  &quot;request_id&quot;: &quot;c7e2a91d-8f4b-4d2a-b1a9-9e04c1122335fgh2215441&quot;,
+  &quot;application_id&quot;: &quot;d9f4b820-1c5a-4e91-9f33-aa556677fghf44155088991&quot;,
+  &quot;file_no&quot;: &quot;BUILD/2026/DEF&quot;,
+  &quot;status&quot;: &quot;Approved&quot;,
+  &quot;authority&quot;: &quot;GHMC&quot;,
+  &quot;project_type&quot;: &quot;Building Permission&quot;,
+  &quot;case_type&quot;: &quot;New&quot;,
+  &quot;plot_use&quot;: &quot;Residential&quot;,
+  &quot;plot_sub_use&quot;: &quot;Independent House&quot;,
+  &quot;application_submission_date&quot;: &quot;2025-03-20&quot;,
+  &quot;owner_details&quot;: [
+    {
+      &quot;name&quot;: &quot;Srinivas Reddy&quot;,
+      &quot;email&quot;: &quot;srinivas.reddy@example.com&quot;,
+      &quot;phone_number&quot;: &quot;+919701234567&quot;,
+      &quot;correspondence_address&quot;: &quot;H.No 3-5-112, Ameerpet&quot;,
+      &quot;pincode&quot;: 500016
+    },
+    {
+      &quot;name&quot;: &quot;Lakshmi Reddy&quot;,
+      &quot;email&quot;: &quot;lakshmi.reddy@example.com&quot;,
+      &quot;phone_number&quot;: &quot;+919876501234&quot;,
+      &quot;correspondence_address&quot;: &quot;H.No 3-5-112, Ameerpet&quot;,
+      &quot;pincode&quot;: 500016
+    }
+  ],
+  &quot;site_details&quot;: {
+    &quot;land_use&quot;: &quot;Residential&quot;,
+    &quot;site_area_in_sq_mts&quot;: 600.0,
+    &quot;net_site_area_in_sq_mts&quot;: 540.0,
+    &quot;road_effected_area_in_sq_mts&quot;: 18.0,
+    &quot;nalla_effected_area_in_sq_mts&quot;: 6.5,
+    &quot;present_market_value_per_sq_yd_in_inr&quot;: 48000.0
+  },
+  &quot;site_address&quot;: {
+    &quot;district&quot;: &quot;Hyderabad&quot;,
+    &quot;mandal&quot;: &quot;Ameerpet&quot;,
+    &quot;municipality_corp_gp&quot;: &quot;GHMC&quot;,
+    &quot;village&quot;: &quot;Ameerpet&quot;,
+    &quot;plot_number&quot;: &quot;Plot 18&quot;,
+    &quot;house_or_door_number&quot;: &quot;H.No 3-5-112&quot;,
+    &quot;street_or_road&quot;: &quot;Sanjeeva Reddy Nagar Road&quot;,
+    &quot;locality&quot;: &quot;SR Nagar&quot;,
+    &quot;survey_details&quot;: [
+      {
+        &quot;survey_no&quot;: &quot;2345&quot;,
+        &quot;extent_in_sq_mts&quot;: 150.0
+      }
+    ],
+    &quot;geo_location&quot;: [
+      {
+        &quot;lat&quot;: 17.4375,
+        &quot;long&quot;: 78.4483
+      },
+      {
+        &quot;lat&quot;: 17.4379,
+        &quot;long&quot;: 78.4489
+      }
+    ]
+  },
+  &quot;ltp_details&quot;: {
+    &quot;name&quot;: &quot;Prakash Verma&quot;,
+    &quot;licence_no&quot;: &quot;LTP-556677&quot;,
+    &quot;phone_number&quot;: &quot;+919812009988&quot;,
+    &quot;email&quot;: &quot;prakash.verma@example.com&quot;,
+    &quot;address&quot;: &quot;Architects Lane, Begumpet&quot;
+  },
+  &quot;builder_details&quot;: {
+    &quot;name&quot;: &quot;Sri Sai Builders&quot;,
+    &quot;licence_no&quot;: &quot;BLD-778899&quot;,
+    &quot;phone_number&quot;: &quot;+919845667788&quot;,
+    &quot;email&quot;: &quot;contact@srisaibuilders.com&quot;,
+    &quot;address&quot;: &quot;Begumpet, Hyderabad&quot;
+  },
+  &quot;structural_engineer_details&quot;: {
+    &quot;name&quot;: &quot;Rajesh Mehta&quot;,
+    &quot;licence_no&quot;: &quot;SE-445566&quot;,
+    &quot;phone_number&quot;: &quot;+919833445566&quot;,
+    &quot;email&quot;: &quot;rajesh.mehta@example.com&quot;,
+    &quot;address&quot;: &quot;Punjagutta, Hyderabad&quot;
+  },
+  &quot;documents&quot;: {
+    &quot;legal_proof_of_ownership&quot;: [
+      &quot;&lt;https://example.com/docs/ownership_sr.pdf&gt;&quot;
+    ],
+    &quot;encumbrance_certificate&quot;: [
+      &quot;&lt;https://example.com/docs/ec_sr.pdf&gt;&quot;
+    ],
+    &quot;fire_noc&quot;: [
+      &quot;&lt;https://buildnow.telangana.gov.in/docs/fire_noc.pdf&gt;&quot;
+    ],
+    &quot;mortgage_deed&quot;: [
+      &quot;&lt;https://buildnow.telangana.gov.in/docs/mortgage_deed.pdf&gt;&quot;
+    ],
+    &quot;risk_insurance_policy&quot;: [
+      &quot;&lt;https://buildnow.telangana.gov.in/docs/risk_insurance_policy.pdf&gt;&quot;
+    ],
+    &quot;other_documents&quot;: [
+      &quot;&lt;https://buildnow.telangana.gov.in/docs/other_documents.pdf&gt;&quot;
+    ],
+    &quot;ownership_and_legal&quot;: {
+      &quot;land_conversion_certificate&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/land_conversion_certificate.pdf&gt;&quot;
+      ],
+      &quot;market_value_certificate&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/market_value_certificate.pdf&gt;&quot;
+      ],
+      &quot;common_affidavit&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/common_affidavit.pdf&gt;&quot;
+      ],
+      &quot;revenue_sketch&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/revenue_sketch.pdf&gt;&quot;
+      ],
+      &quot;pattadar_passbook&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/pattadar_passbook.pdf&gt;&quot;
+      ],
+      &quot;orc&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/orc.pdf&gt;&quot;
+      ]
+    },
+    &quot;vicinity_to_restricted_area&quot;: {
+      &quot;water_body_within_200m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/water_body_within_200m.pdf&gt;&quot;
+      ],
+      &quot;prohibited_land&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/prohibited_land.pdf&gt;&quot;
+      ],
+      &quot;nala_conversion&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/nala_conversion.pdf&gt;&quot;
+      ],
+      &quot;air_funnel_zone&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/air_funnel_zone.pdf&gt;&quot;
+      ],
+      &quot;defence_boundary_within_10m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/defence_boundary_within_10m.pdf&gt;&quot;
+      ],
+      &quot;oil_gas_pipeline&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/oil_gas_pipeline.pdf&gt;&quot;
+      ],
+      &quot;railway_boundary_within_30m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/railway_boundary_within_30m.pdf&gt;&quot;
+      ],
+      &quot;protected_monument_within_200m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/protected_monument_within_200m.pdf&gt;&quot;
+      ],
+      &quot;water_pipeline_within_100m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/water_pipeline_within_100m.pdf&gt;&quot;
+      ],
+      &quot;religious_structure_within_100m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/religious_structure_within_100m.pdf&gt;&quot;
+      ],
+      &quot;military_airport_within_1000m&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/military_airport_within_1000m.pdf&gt;&quot;
+      ],
+      &quot;court_case_on_title&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/court_case_on_title.pdf&gt;&quot;
+      ],
+      &quot;scheduled_area_or_tree_felling&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/scheduled_area_or_tree_felling.pdf&gt;&quot;
+      ]
+    },
+    &quot;department_nocs&quot;: {
+      &quot;fire&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/fire.pdf&gt;&quot;
+      ],
+      &quot;irrigation&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/irrigation.pdf&gt;&quot;
+      ],
+      &quot;revenue&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/revenue.pdf&gt;&quot;
+      ],
+      &quot;title&quot;: [
+        &quot;&lt;https://buildnow.telangana.gov.in/docs/title.pdf&gt;&quot;
+      ]
+    }
+  },
+  &quot;permit_details&quot;: {
+    &quot;permit_no&quot;: &quot;2026/BP/6784290&quot;,
+    &quot;permit_date&quot;: &quot;2025-04-05&quot;,
+    &quot;due_date_for_work_commencement&quot;: &quot;2025-05-10&quot;,
+    &quot;due_date_for_work_completion&quot;: &quot;2029-04-05&quot;,
+    &quot;proceedings_document&quot;: [
+      {
+        &quot;document_name&quot;: &quot;Building Permit Order - HMDA Proceedings&quot;,
+        &quot;url&quot;: &quot;&lt;https://buildnow.telangana.gov.in/docs/building_permit_order_hmda_proceedings.pdf&gt;&quot;
+      },
+      {
+        &quot;document_name&quot;: &quot;Mortgage Letter&quot;,
+        &quot;url&quot;: &quot;&lt;https://buildnow.telangana.gov.in/docs/mortgage_letter.pdf&gt;&quot;
+      }
+    ],
+    &quot;drawing_pdf&quot;: [
+      &quot;&lt;https://example.com/docs/drawing_sr.pdf&gt;&quot;
+    ],
+    &quot;scrutiny_report&quot;: [
+      &quot;&lt;https://buildnow.telangana.gov.in/docs/scrutiny_report.pdf&gt;&quot;
+    ]
+  },
+  &quot;proposed_building_permission_details&quot;: {
+    &quot;builtup_area_in_sq_mts&quot;: 520.75,
+    &quot;mortage_area_in_sq_mts&quot;: 60.0,
+    &quot;no_of_RWH&quot;: 4,
+    &quot;buildings_details&quot;: [
+      {
+        &quot;building_name&quot;: &quot;Main Block&quot;,
+        &quot;building_type&quot;: &quot;Residential&quot;,
+        &quot;building_height_in_mts&quot;: 12.0,
+        &quot;building_use&quot;: &quot;Independent House&quot;,
+        &quot;no_of_dwelling_units&quot;: 1,
+        &quot;net_building_residential_builtup_area_in_sq_mts&quot;: 480.0,
+        &quot;net_building_commercial_builtup_area_in_sq_mts&quot;: 0.0,
+        &quot;net_building_total_parking_area&quot;: 60.0,
+        &quot;mortgage_area_in_sq_mts&quot;: 60.0,
+        &quot;mortgage_tenemant_names&quot;: &quot;State Bank of India&quot;,
+        &quot;floors_details&quot;: [
+          {
+            &quot;floor_no&quot;: 2,
+            &quot;floor_name&quot;: &quot;Residential Floors&quot;,
+            &quot;floor_type&quot;: &quot;Residential&quot;,
+            &quot;floor_height_in_mts&quot;: 3.0,
+            &quot;net_floor_residential_builtup_area_in_sq_mts&quot;: 160.0,
+            &quot;net_floor_commercial_builtup_area_in_sq_mts&quot;: 0.0
+          }
+        ]
+      }
+    ]
+  },
+  &quot;proposed_layout_with_open_plot_details&quot;: {
+    &quot;open_space_area_in_sq_mts&quot;: 180.0,
+    &quot;social_infrastructure_area_in_sq_mts&quot;: 40.0,
+    &quot;plotted_area_in_sq_mts&quot;: 250.0,
+    &quot;roads_area_in_sq_mts&quot;: 90.0,
+    &quot;sub_plots_details&quot;: [
+      {
+        &quot;sub_plot_name&quot;: &quot;OP-2&quot;,
+        &quot;sub_plot_area_in_sq_mts&quot;: 180.0,
+        &quot;is_mortgaged&quot;: false
+      }
+    ]
+  },
+  &quot;proposed_layout_with_housing_and_gated_community_details&quot;: {
+    &quot;open_space_area_in_sq_mts&quot;: 210.0,
+    &quot;social_infrastructure_area_in_sq_mts&quot;: 55.0,
+    &quot;plotted_area_in_sq_mts&quot;: 300.0,
+    &quot;roads_area_in_sq_mts&quot;: 110.0,
+    &quot;utilities_area_in_sq_mts&quot;: 35.0,
+    &quot;sub_plots_details&quot;: [
+      {
+        &quot;sub_plot_name&quot;: &quot;GC-Plot-2&quot;,
+        &quot;sub_plot_area_in_sq_mts&quot;: 260.0,
+        &quot;building_details&quot;: {
+          &quot;building_name&quot;: &quot;Garden Residency&quot;,
+          &quot;building_height_in_mts&quot;: 15.0,
+          &quot;building_use&quot;: &quot;Residential&quot;,
+          &quot;net_building_residential_builtup_area_in_sq_mts&quot;: 650.0,
+          &quot;net_building_commercial_builtup_area_in_sq_mts&quot;: 0.0,
+          &quot;net_building_total_parking_area&quot;: 180.0,
+          &quot;is_mortgaged&quot;: true,
+          &quot;floors&quot;: [
+            {
+              &quot;floor_number&quot;: 2,
+              &quot;floor_name&quot;: &quot;Second Floor&quot;,
+              &quot;floor_type&quot;: &quot;Residential&quot;,
+              &quot;floor_height_in_mts&quot;: 3.0,
+              &quot;net_floor_residential_builtup_area_in_sq_mts&quot;: 130.0,
+              &quot;net_floor_commercial_builtup_area_in_sq_mts&quot;: 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  &quot;proposed_layout_with_housing_and_without_gated_community_details&quot;: {
+    &quot;open_space_area_in_sq_mts&quot;: 190.0,
+    &quot;social_infrastructure_area_in_sq_mts&quot;: 35.0,
+    &quot;plotted_area_in_sq_mts&quot;: 270.0,
+    &quot;roads_area_in_sq_mts&quot;: 100.0,
+    &quot;utilities_area_in_sq_mts&quot;: 30.0,
+    &quot;sub_plots_details&quot;: [
+      {
+        &quot;sub_plot_name&quot;: &quot;NGC-Plot-2&quot;,
+        &quot;sub_plot_area_in_sq_mts&quot;: 240.0,
+        &quot;building_details&quot;: {
+          &quot;building_name&quot;: &quot;Duplex Homes&quot;,
+          &quot;building_height_in_mts&quot;: 9.5,
+          &quot;building_use&quot;: &quot;Residential&quot;,
+          &quot;net_building_residential_builtup_area_in_sq_mts&quot;: 360.0,
+          &quot;net_building_commercial_builtup_area_in_sq_mts&quot;: 0.0,
+          &quot;net_building_total_parking_area&quot;: 80.0,
+          &quot;is_mortgaged&quot;: false,
+          &quot;floors&quot;: [
+            {
+              &quot;floor_number&quot;: 1,
+              &quot;floor_name&quot;: &quot;First Floor&quot;,
+              &quot;floor_type&quot;: &quot;Residential&quot;,
+              &quot;floor_height_in_mts&quot;: 2.9,
+              &quot;net_floor_residential_builtup_area_in_sq_mts&quot;: 180.0,
+              &quot;net_floor_commercial_builtup_area_in_sq_mts&quot;: 0.0
+            }
+          ]
+        }
+      }
+    ]
+  }
+}</pre>
+</section>
+<section id="response">
+<h2>Success response</h2>
+<div class="codehead"><span>application/json</span><button onclick="copyCode('response-json',this)">Copy JSON</button></div>
+<pre id="response-json">{
+  &quot;status&quot;: &quot;success&quot;,
+  &quot;request_id&quot;: &quot;c7e2a91d-8f4b-4d2a-b1a9-9e04c1122335fgh2215441&quot;
+}</pre>
+</section>
+<section id="notes">
+<h2>Notes</h2>
+<ul><li><code>request_id</code> must be unique for every application submission.</li></ul>
+<p class="muted">This reference reflects the supplied BuildNow API document. Field-level validation rules, required/optional field definitions, and error response formats were not specified in that source.</p>
+</section>
+<footer>BuildNow API Documentation</footer>
+</main>
+</div>
+<script>
+async function copyCode(id,button){
+  const text=document.getElementById(id).innerText;
+  try{
+    await navigator.clipboard.writeText(text);
+    const old=button.innerText;button.innerText="Copied!";
+    setTimeout(()=>button.innerText=old,1400);
+  }catch(e){
+    const range=document.createRange();range.selectNodeContents(document.getElementById(id));
+    const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+    button.innerText="Select and copy";
+  }
+}
+</script>
+</body>
+</html>
